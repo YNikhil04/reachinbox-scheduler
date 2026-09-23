@@ -8,4 +8,7 @@ const connection = new IORedis({
   maxRetriesPerRequest: null, // required by BullMQ
 });
 
+connection.on("connect", () => console.log("✅ Redis connected"));
+connection.on("error", (err) => console.error("❌ Redis error:", err));
+
 export default connection;
