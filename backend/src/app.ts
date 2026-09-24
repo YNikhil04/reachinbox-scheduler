@@ -7,6 +7,7 @@ import authRoutes from "./routes/auth.routes";
 import meRoutes from "./routes/me.routes";
 import uploadRoutes from "./routes/upload.routes";
 import campaignRoutes from "./routes/campaign.routes";
+import emailRoutes from "./routes/email.routes";
 
 dotenv.config();
 
@@ -39,5 +40,7 @@ app.use("/api", meRoutes);
 
 app.use("/api", uploadRoutes);
 app.use("/api", campaignRoutes);
+
+app.use("/api", emailRoutes);
 
 export default app;
