@@ -5,6 +5,8 @@ import dotenv from "dotenv";
 import passport from "./config/passport";
 import authRoutes from "./routes/auth.routes";
 import meRoutes from "./routes/me.routes";
+import uploadRoutes from "./routes/upload.routes";
+import campaignRoutes from "./routes/campaign.routes";
 
 dotenv.config();
 
@@ -34,5 +36,8 @@ app.get("/health", (req, res) => {
 
 app.use("/auth", authRoutes);
 app.use("/api", meRoutes);
+
+app.use("/api", uploadRoutes);
+app.use("/api", campaignRoutes);
 
 export default app;
